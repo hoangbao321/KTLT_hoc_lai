@@ -100,6 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MH_CHAO_KHACH_HANG.cshtml" />
+    <Content Include="MH_CHAO_NHAN_VIEN.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

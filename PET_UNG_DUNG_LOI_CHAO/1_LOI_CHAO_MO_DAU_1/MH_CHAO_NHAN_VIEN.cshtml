@@ -1,0 +1,41 @@
+﻿
+@{
+    Layout = null;
+    string chuoi_html_loi_chao = string.Empty;
+    string ma_so = string.Empty;
+    if (IsPost)
+    {
+        ma_so = Request.Form["TH_ma_so"];
+        if (string.IsNullOrEmpty(ma_so.Trim()) == false)
+        {
+            var filePath = Server.MapPath(".\\Du_lieu\\" + ma_so + ".txt");
+            StreamReader f =  new StreamReader (filePath);
+            string ten_nhan_vien = f.ReadLine();
+            chuoi_html_loi_chao = "xin chào " + ten_nhan_vien + " :)";
+        }
+        else
+        {
+            chuoi_html_loi_chao = "xin moi nhap lai";
+        }
+    }
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <form method="Post" action="~/MH_CHAO_NHAN_VIEN.cshtml">
+            <label>nhập tên nhân viên</label>
+            <input type="text" name="TH_ma_so" value="@ma_so" />
+            <input type="submit" value="ok" />
+        </form>
+    </div>
+    @chuoi_html_loi_chao
+</body>
+</html>
