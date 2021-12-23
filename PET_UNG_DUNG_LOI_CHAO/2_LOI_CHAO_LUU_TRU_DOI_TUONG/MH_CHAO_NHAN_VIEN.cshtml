@@ -1,0 +1,46 @@
+﻿
+@{
+    Layout = null;
+    string chuoi_html_loi_chao = string.Empty;
+    string ma_so = string.Empty;
+
+    if (IsPost)
+    {
+        ma_so = Request.Form["TH_ma_so"];
+
+        if (string.IsNullOrEmpty(ma_so.Trim()) == false)
+        {
+            var nv = XL_nhan_vien.doc(ma_so);
+            if (nv != null)
+            {
+                chuoi_html_loi_chao = $"xin chào {nv.Ho_ten} <br /> Số lần chào: {nv.So_lan_Chao}  ";
+            }
+            else
+            {
+                chuoi_html_loi_chao = "ko co thằng nv này ";
+            }
+        }
+        else
+        {
+            chuoi_html_loi_chao = "xin moi nhap lai ma so # rong";
+        }
+    }
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <form method="Post" action="~/MH_CHAO_NHAN_VIEN.cshtml">
+            <label>nhập tên nhân viên</label><br />
+            <input type="text" name="TH_ma_so" value="@ma_so" /><br />
+            <input type="submit" value="ok" />
+        </form>
+    </div>
+    @Html.Raw(chuoi_html_loi_chao)
+</body>
+</html>

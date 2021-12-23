@@ -7,16 +7,16 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{7B65849C-20EB-40B1-9060-4A64142EFEB8}</ProjectGuid>
+    <ProjectGuid>{1CFF6EBC-02A8-494B-B5F8-0363642DE66E}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_1_LOI_CHAO_MO_DAU_1</RootNamespace>
-    <AssemblyName>1_LOI_CHAO_MO_DAU_1</AssemblyName>
+    <RootNamespace>_2_LOI_CHAO_LUU_TRU_DOI_TUONG</RootNamespace>
+    <AssemblyName>2_LOI_CHAO_LUU_TRU_DOI_TUONG</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44373</IISExpressSSLPort>
+    <IISExpressSSLPort>44367</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -91,18 +91,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Du_lieu\NV_1.txt" />
-    <Content Include="Du_lieu\NV_2.txt" />
-    <Content Include="Du_lieu\NV_3.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XL_nhan_vien.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="MH_CHAO_KHACH_HANG.cshtml" />
     <Content Include="MH_CHAO_NHAN_VIEN.cshtml" />
     <Content Include="MH_CHAO_TAT_CA.cshtml" />
+    <Content Include="Du_lieu\NV_1.json" />
+    <Content Include="Du_lieu\NV_3.json" />
+    <Content Include="Du_lieu\NV_2.json" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -124,9 +125,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>57584</DevelopmentServerPort>
+          <DevelopmentServerPort>54675</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44373/</IISUrl>
+          <IISUrl>https://localhost:44367/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

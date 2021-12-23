@@ -1,0 +1,36 @@
+﻿@{
+    Layout = null;
+    var chuoi_HTML_loi_chao = string.Empty;
+    string ten_nhap = string.Empty;
+    if(IsPost)
+    {
+        ten_nhap = Request.Form["ten"];
+        if (string.IsNullOrWhiteSpace(ten_nhap)==false)
+        {
+            ten_nhap = Request.Form["ten"];
+            chuoi_HTML_loi_chao = "Xin chào " + ten_nhap + " đây là trang web đầu tiên của tôi";
+        }
+        else
+        {
+            chuoi_HTML_loi_chao = "xin moi nhap lai";
+        }
+    }
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <form method="Post">
+            <label>nhập  tên khách hàng</label><br />
+            <input type="text" name="ten" value="@ten_nhap" />
+            <input type="submit" value="OK" />
+        </form>
+    @Html.Raw(chuoi_HTML_loi_chao)
+    </div>
+</body>
+</html>
