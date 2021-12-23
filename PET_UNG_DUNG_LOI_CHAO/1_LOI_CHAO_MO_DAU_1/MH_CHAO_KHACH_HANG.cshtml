@@ -5,12 +5,19 @@
     if(IsPost)
     {
         ten_nhap = Request.Form["ten"];
-        chuoi_HTML_loi_chao = "Xin chào " + ten_nhap+" đây là trang web đầu tiên của tôi";
+        if (string.IsNullOrWhiteSpace(ten_nhap)==false)
+        {
+            ten_nhap = Request.Form["ten"];
+            chuoi_HTML_loi_chao = "Xin chào " + ten_nhap + " đây là trang web đầu tiên của tôi";
+        }
+        else
+        {
+            chuoi_HTML_loi_chao = "xin moi nhap lai";
+        }
     }
 }
 
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -19,7 +26,7 @@
 <body>
     <div>
         <form method="Post">
-            <label>nhap ten khach hang</label><br />
+            <label>nhập  tên khách hàng</label><br />
             <input type="text" name="ten" value="@ten_nhap" />
             <input type="submit" value="OK" />
         </form>
