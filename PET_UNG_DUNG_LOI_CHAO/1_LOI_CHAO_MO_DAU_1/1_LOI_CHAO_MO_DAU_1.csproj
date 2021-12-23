@@ -93,6 +93,7 @@
   <ItemGroup>
     <Content Include="Du_lieu\NV_1.txt" />
     <Content Include="Du_lieu\NV_2.txt" />
+    <Content Include="Du_lieu\NV_3.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
