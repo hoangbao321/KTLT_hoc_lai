@@ -16,7 +16,6 @@ public class XL_nhan_vien
 {
     public static nhanvien doc(string Ma_so)
     {
-
         #region
         string file_path = HttpContext.Current.Server.MapPath($"\\Du_lieu\\danh_sach_nhan_vien.json");
         if( File.Exists(file_path))
@@ -30,7 +29,7 @@ public class XL_nhan_vien
                 if(nv.Ma_so==Ma_so)
                 {
                     nv.So_lan_Chao++;
-                    ghi(file_path, nv);
+                    ghi(file_path, ds_nhan_vien);
                     return nv;
                 }
             }
@@ -39,10 +38,10 @@ public class XL_nhan_vien
         #endregion
 
     }
-    public static void ghi(string filepath, nhanvien nv)
+    public static void ghi(string filepath, List<nhanvien> ds_nv)
     {
         StreamWriter f = new StreamWriter(filepath);
-        string content = JsonConvert.SerializeObject(nv);
+        string content = JsonConvert.SerializeObject(ds_nv);
         f.WriteLine(content);
         f.Close();
     }
