@@ -8,7 +8,8 @@
         if (string.IsNullOrWhiteSpace(ten_nhap)==false)
         {
             ten_nhap = Request.Form["ten"];
-            chuoi_HTML_loi_chao = "Xin chào " + ten_nhap + " đây là trang web đầu tiên của tôi";
+            string hinh_anh = $"<img src='hinh/KH_{XL_KHACH_HANG.random()}.jpg' weight='100' height='100'/>";
+            chuoi_HTML_loi_chao = $"Xin chào {ten_nhap} <br> {hinh_anh} <br>  đây là trang web đầu tiên của tôi";
         }
         else
         {
@@ -27,10 +28,11 @@
     <div>
         <form method="Post">
             <label>nhập  tên khách hàng</label><br />
-            <input type="text" name="ten" value="@ten_nhap" />
+            <input type="text" name="ten" value="@ten_nhap" /><br />
             <input type="submit" value="OK" />
         </form>
-    @Html.Raw(chuoi_HTML_loi_chao)
     </div>
+    @Html.Raw(chuoi_HTML_loi_chao)
+  
 </body>
 </html>
