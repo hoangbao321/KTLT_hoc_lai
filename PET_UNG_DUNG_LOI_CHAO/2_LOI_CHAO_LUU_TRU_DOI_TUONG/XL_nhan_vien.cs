@@ -17,9 +17,7 @@ public class XL_nhan_vien
     public static nhanvien doc(string Ma_so)
     {
         string file_path = HttpContext.Current.Server.MapPath("\\Du_lieu");
-
-        string[] file_name = Directory.GetFiles(file_path,"*.json");
-
+        string[] file_name = Directory.GetFiles(file_path, "*.json");
 
         for (int i  = 0; i < file_name.Length;i++)
         {
