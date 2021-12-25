@@ -24,14 +24,22 @@ public class XL_nhan_vien
             string content = f.ReadLine();
             f.Close();
             var  ds_nhan_vien = JsonConvert.DeserializeObject<List<nhanvien>>(content);
-            foreach (nhanvien nv in ds_nhan_vien )
+            //foreach (nhanvien nv in ds_nhan_vien )
+            //{
+            //    if(nv.Ma_so == Ma_so)
+            //    {
+            //        nv.danh_sach_lan_dang_nhap.Add(DateTime.Now);
+            //        ghi(file_path, ds_nhan_vien);
+            //        return nv;
+            //    }
+            //}
+
+            nhanvien nv = ds_nhan_vien.First(p => p.Ma_so == Ma_so);
+            if(nv != null  )
             {
-                if(nv.Ma_so == Ma_so)
-                {
-                    nv.danh_sach_lan_dang_nhap.Add(DateTime.Now);
-                    ghi(file_path, ds_nhan_vien);
-                    return nv;
-                }
+                nv.danh_sach_lan_dang_nhap.Add(DateTime.Now);
+                ghi(file_path, ds_nhan_vien);
+                return nv;
             }
         }
         return null;

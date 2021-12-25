@@ -1,5 +1,8 @@
 ﻿@{
     Layout = null;
+    string chuoi_HTML_loi_chao = $"<img src='hinh/KH_{XL_nghiep_vu.rand()}.jpg' weight='50' height='50' > <br>" +
+                $"Xin chào khách quý";
+
 }
 
 <!DOCTYPE html>
@@ -11,7 +14,7 @@
 </head>
 <body>
     <div>
-    
+    @Html.Raw(chuoi_HTML_loi_chao)
     </div>
 </body>
 </html>
