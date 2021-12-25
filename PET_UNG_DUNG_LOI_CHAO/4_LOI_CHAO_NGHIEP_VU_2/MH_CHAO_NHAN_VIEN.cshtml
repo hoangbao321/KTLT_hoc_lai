@@ -1,0 +1,68 @@
+﻿
+@{
+    Layout = null;
+    string chuoi_html_loi_chao = string.Empty;
+    string ten_dang_nhap = string.Empty;
+    string mat_khau = string.Empty;
+    var nv = new nhanvien();
+
+    if (IsPost)
+    {
+        ten_dang_nhap = Request.Form["TH_ten_dang_nhap"];
+        mat_khau = Request.Form["TH_mat_khau"];
+
+        if (string.IsNullOrEmpty(mat_khau) == false && string.IsNullOrEmpty(ten_dang_nhap) == false)
+        {
+            nv = XL_nhan_vien.doc(ten_dang_nhap,mat_khau);
+            if (nv != null)
+            {
+                string hinh_anh = $"<img src='hinh/NV_{nv.Ma_so}.jpg' width='100' height='100'/>";
+                string ngay ="";
+                foreach (var n in nv.Danh_sach_lan_dang_nhap)
+                {
+                    ngay += n.ToString()+" ";
+                }
+                string nhom_hang_nv_quan_ly = "";
+
+                for (int i = 0; i < nv.Danh_sach_ma_so_nhom_hang.Count; i++)
+                {
+                    foreach (KeyValuePair<string, string> item in nv.Danh_sach_ma_so_nhom_hang[i])
+                    {
+                        nhom_hang_nv_quan_ly += $"nhóm hàng: {item.Key} - mã hàng:{item.Value} <br>";
+                    }
+                }
+
+                chuoi_html_loi_chao = $"xin chào {nv.Ho_Ten} <br> {hinh_anh} <br /> Danh sách đăng nhập: {ngay} <br> {nhom_hang_nv_quan_ly} ";
+            }
+            else
+            {
+                chuoi_html_loi_chao = "ko co thằng nv này ";
+            }
+        }
+        else
+        {
+            chuoi_html_loi_chao = "xin moi nhap lai ma so # rong";
+        }
+    }
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MH_CHAO_NHAN_VIEN</title>
+</head>
+<body>
+    <div>
+        <form method="Post" action="~/MH_CHAO_NHAN_VIEN.cshtml">
+            <label>nhập tên đăng nhập</label><br />
+            <input type="text" name="TH_ten_dang_nhap" value="@ten_dang_nhap" /><br />
+            <label>nhập mật khẩu</label><br />
+            <input type="text" name="TH_mat_khau" value="@mat_khau" /><br />
+            <input type="submit" value="ok" />
+        </form>
+    </div>
+    @Html.Raw(chuoi_html_loi_chao)
+    
+</body>
+</html>

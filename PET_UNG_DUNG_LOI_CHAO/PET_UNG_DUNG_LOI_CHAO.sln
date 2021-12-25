@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3_LOI_CHAO_LUU_TRU_DANH_SAC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4_LOI_CHAO_NGHIEP_VU", "4_LOI_CHAO_NGHIEP_VU\4_LOI_CHAO_NGHIEP_VU.csproj", "{011DF4AE-4CD6-42FF-9496-BB115BC488D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4_LOI_CHAO_NGHIEP_VU_2", "4_LOI_CHAO_NGHIEP_VU_2\4_LOI_CHAO_NGHIEP_VU_2.csproj", "{78FB96FC-B702-484C-8F33-65842264098A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{011DF4AE-4CD6-42FF-9496-BB115BC488D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{011DF4AE-4CD6-42FF-9496-BB115BC488D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{011DF4AE-4CD6-42FF-9496-BB115BC488D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78FB96FC-B702-484C-8F33-65842264098A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78FB96FC-B702-484C-8F33-65842264098A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78FB96FC-B702-484C-8F33-65842264098A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78FB96FC-B702-484C-8F33-65842264098A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
