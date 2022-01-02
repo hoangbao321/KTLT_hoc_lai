@@ -1,2 +1,2 @@
-# KTLT_hoc_lai
+# KTLT_ôn lại kiến thức
 test KTLT
